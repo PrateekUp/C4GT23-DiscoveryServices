@@ -1,10 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import Filter from "./filter";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Add from "@mui/material/Icon";
+
 // import dayjs from "dayjs";
 // import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 // import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -69,14 +72,8 @@ const Search = () => {
             />
           </div>
         </div>
-
-        <div>
-          <span
-            className="text-red-700 text-md hover:text-xl text-center justify-center ease-out cursor-pointer"
-            // onClick={handleClick}
-          >
-            More Filters
-          </span>
+        <div className="flex p-4 mb-4">
+          <Filter />
         </div>
         <div className="flex space-x-4">
           <button className="flex-1 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
