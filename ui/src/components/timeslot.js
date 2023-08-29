@@ -26,13 +26,12 @@ function Showtimes() {
 
   return (
     <div>
-      <h2>Select a Showtime</h2>
       <div className="flex space-x-4">
         {times.map((time, index) => (
           <Button
             key={index}
             variant="contained"
-            color="primary"
+            color="success"
             onClick={() => handleTimeClick(time)}
           >
             {time}
@@ -48,10 +47,10 @@ function Showtimes() {
           <TextField margin="dense" label="Phone Number" fullWidth />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="error">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="success">
             Book
           </Button>
         </DialogActions>

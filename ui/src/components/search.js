@@ -8,11 +8,11 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Add from "@mui/material/Icon";
 
-// import dayjs from "dayjs";
+import dayjs from "dayjs";
 // import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const Search = () => {
   const [by, setBy] = useState("");
@@ -23,12 +23,14 @@ const Search = () => {
 
   return (
     <main className="container mx-auto">
-      <div className="bg-green-100 p-8 rounded shadow-md">
-        <h2 className="text-2xl mb-2">SEARCH YOUR ROOM</h2>
-        <hr className="h-px my-2 w-64 mb-8 bg-gray-200 border-0 dark:bg-gray-700" />
-        <div className=" flex flex-col md:flex-row mb-4">
-          <div className="flex-1 mr-2 px-8">
-            <label className="block text-gray-700 mb-2" htmlFor="searchby">
+      <div className="bg-green-200 p-8 rounded shadow-md">
+        <h2 className="text-2xl text-center text-[#352F44] font-roboto font-bold">
+          SEARCH YOUR ROOM
+        </h2>
+        <hr className="w-32 h-1 mx-auto border-0 mb-8 mt-2 rounded md:mt-4 dark:bg-gray-700 " />
+        <div className=" flex flex-col md:flex-row">
+          <div className="flex-1 mr-2 px-8 mb-4">
+            <label className="block text-[#352F44] mb-2" htmlFor="searchby">
               How do you want to search?
             </label>
             <FormControl fullWidth>
@@ -48,8 +50,8 @@ const Search = () => {
               </Select>
             </FormControl>
           </div>
-          <div className="flex-1 mr-2 px-8">
-            <label className="block text-gray-700 mb-2" htmlFor="destination">
+          <div className="flex-1 mr-2 px-8 mb-4">
+            <label className="block text-[#352F44] mb-2" htmlFor="destination">
               What are you looking for?
             </label>
             <TextField
@@ -59,27 +61,23 @@ const Search = () => {
               variant="outlined"
             />
           </div>
-          <div className="flex-1 mr-2 px-8">
-            <label className="block text-gray-700 mb-2" htmlFor="destination">
-              Hey
+          <div className="flex-1 mr-2 px-8 mb-4">
+            <label className="block text-[#352F44] mb-2" htmlFor="destination">
+              When are you looking?
             </label>
-            {/* <DatePicker defaultValue={dayjs("2022-04-17")} /> */}
-            <TextField
-              fullWidth
-              id="outlined-basic"
-              label="Your Destination"
-              variant="outlined"
-            />
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker />
+            </LocalizationProvider>
           </div>
         </div>
-        <div className="flex p-4 mb-4">
+        <div className="flex w-full justify center align-middle mb-4 mx-2 px-8">
           <Filter />
         </div>
-        <div className="flex space-x-4">
-          <button className="flex-1 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+        <div className="flex space-x-32">
+          <button className="flex-1 bg-blue-400 text-white p-2 rounded hover:bg-blue-700">
             Search
           </button>
-          <button className="flex-1 bg-gray-300 p-2 rounded hover:bg-gray-400">
+          <button className="flex-1 bg-red-300 p-2 rounded hover:bg-red-500">
             Clear
           </button>
         </div>

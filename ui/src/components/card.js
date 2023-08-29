@@ -13,7 +13,7 @@ export default function MultiActionAreaCard() {
     navigate("/detail");
   };
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} onClick={handleButtonClick}>
       <CardActionArea>
         <CardMedia
           component="img"

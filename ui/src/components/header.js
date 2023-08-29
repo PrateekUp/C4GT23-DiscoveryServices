@@ -2,9 +2,13 @@ import React from "react";
 
 function header() {
   return (
-    <header className="bg-green-100 p-4 shadow-md">
+    <header className="bg-green-200 p-4 shadow-md ">
       <div className="container mx-auto">
-        <h1 className="text-xl font-bold text-blue-500">FindYourRoom</h1>
+        <a href="/">
+          <h1 className="text-2xl font-bold text-[#352F44] font-roboto">
+            FindYourRoom
+          </h1>
+        </a>
       </div>
     </header>
   );
