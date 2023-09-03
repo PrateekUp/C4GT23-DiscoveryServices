@@ -4,13 +4,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-export default function MultiActionAreaCard() {
+export default function MultiActionAreaCard({ data }) {
+  const { bpp, room, slots } = data;
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/detail");
+    navigate(`/details`);
   };
   return (
     <Card sx={{ maxWidth: 345 }} onClick={handleButtonClick}>
@@ -18,27 +20,38 @@ export default function MultiActionAreaCard() {
         <CardMedia
           component="img"
           height="140"
-          image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
+          image={room.image}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {room.name}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="h6"
+            component="div"
+            className="text-gray-500 text-lg font-semibold uppercase tracking-wider "
+          >
+            {room.institute}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {room.description}
           </Typography>
+          <div className="mt-2">
+            <LocationOnIcon style={{ marginRight: "8px" }} />
+            {room.state}
+          </div>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button
           variant="outlined"
           size="small"
-          color="primary"
+          color="success"
           onClick={handleButtonClick}
         >
-          Details
+          Proceed to Book
         </Button>
       </CardActions>
     </Card>

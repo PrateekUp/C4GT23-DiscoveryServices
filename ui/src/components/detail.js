@@ -1,9 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import Showtimes from "./timeslot";
 import Carousel from "./carousel/carousel";
 
-const detail = () => {
-  //
+const Detail = () => {
+  const { id } = useParams();
+
+  // const cardData = fetchDataOrFindDataLocally(id);
+  // //
   const images = [
     "https://images.unsplash.com/photo-1693170509455-f28aefcd1005?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
     "https://images.unsplash.com/photo-1693048925857-3255f0b544d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -14,7 +18,7 @@ const detail = () => {
     <>
       <div className="flex flex-col h-max bg-green-200 p-8 rounded shadow-md mt-8">
         <h1 className="font-bold text-[#18122B] text-2xl">Card Title</h1>
-        <h2 className="text-gray-400 text-lg font-semibold uppercase">
+        <h2 className="text-gray-400 text-lg font-semibold uppercase tracking-wider">
           Hogwarts
         </h2>
         <hr className="h-px my-2 w-64 mb-8 bg-gray-200 border-0 dark:bg-gray-700" />
@@ -44,4 +48,4 @@ const detail = () => {
   );
 };
 
-export default detail;
+export default Detail;
