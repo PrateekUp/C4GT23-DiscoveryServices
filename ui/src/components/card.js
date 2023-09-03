@@ -12,7 +12,9 @@ export default function MultiActionAreaCard({ data }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate(`/details`);
+    navigate(`/details/${room.id}`, {
+      state: { roomDetails: room, slots: slots, bpp: bpp },
+    });
   };
   return (
     <Card sx={{ maxWidth: 345 }} onClick={handleButtonClick}>

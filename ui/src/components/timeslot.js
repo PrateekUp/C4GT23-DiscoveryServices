@@ -8,12 +8,12 @@ import {
   DialogActions,
 } from "@mui/material";
 
-function Showtimes() {
+function Showtimes({ times }) {
   const [selectedTime, setSelectedTime] = useState(null);
   const [open, setOpen] = useState(false);
 
-  const handleTimeClick = (time) => {
-    setSelectedTime(time);
+  const handleTimeClick = (slot) => {
+    setSelectedTime(slot);
     setOpen(true);
   };
 
@@ -22,19 +22,30 @@ function Showtimes() {
     setSelectedTime(null);
   };
 
-  const times = ["1:00 PM", "3:00 PM", "5:00 PM", "7:00 PM"]; // sample showtimes
-
   return (
     <div>
       <div className="flex space-x-4">
-        {times.map((time, index) => (
+        {times.map((slot, index) => (
           <Button
             key={index}
             variant="contained"
             color="success"
-            onClick={() => handleTimeClick(time)}
+            onClick={() =>
+              handleTimeClick(
+                new Date(slot.fulfillment.startTime).toLocaleTimeString(
+                  "en-US",
+                  {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }
+                )
+              )
+            }
           >
-            {time}
+            {new Date(slot.fulfillment.startTime).toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </Button>
         ))}
       </div>
