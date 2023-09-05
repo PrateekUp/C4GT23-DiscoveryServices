@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Showtimes from "./timeslot";
 import Carousel from "./carousel/carousel";
 
@@ -8,7 +8,7 @@ const Detail = () => {
   const location = useLocation();
   const roomDetails = location.state.roomDetails;
   const slots = location.state.slots;
-  const bpp = location.state.slots;
+  // const bpp = location.state.slots;
 
   // const cardData = fetchDataOrFindDataLocally(id);
   // //

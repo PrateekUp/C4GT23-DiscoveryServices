@@ -5,6 +5,7 @@ import Search from "../components/search";
 // import Button from "@mui/material/Button";
 import Body from "../components/body";
 import SearchContext from "../components/contextsearch";
+// import Footer from "../components/footer";
 
 const Homepage = () => {
   const [apiResponse, setApiResponse] = useState(null);
@@ -20,6 +21,7 @@ const Homepage = () => {
             <Search />
             <Body />
           </SearchContext.Provider>
+          {/* <Footer /> */}
         </div>
       </div>
     </>
