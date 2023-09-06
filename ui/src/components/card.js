@@ -26,8 +26,8 @@ export default function MultiActionAreaCard({ data }) {
           alt="green iguana"
         />
         <CardContent>
-          <div className="absolute top-0 right-0 bg-black text-white text-xs px-4 py-2 rounded-bl-md">
-            {bpp.bpp_id}
+          <div className="absolute top-0 right-0 bg-red-500 text-black font-bold text-xs px-4 py-2 rounded-bl-md">
+            {bpp.id}
           </div>
           <Typography gutterBottom variant="h5" component="div">
             {room.name}

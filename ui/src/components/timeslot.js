@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import {
   Button,
   Dialog,
@@ -38,27 +38,24 @@ function Showtimes({ times }) {
       itemId: selectedTime.itemId,
       fulfillmentId: selectedTime.fulfillmentId,
       type: "room",
-      name: name,
-      email: email,
-      phone: phone,
     };
 
-    // try {
-    //   const response = await axios.post(
-    //     "https://dev.elevate-apis.shikshalokam.org/osl-bap/dsep/confirm",
-    //     payload,
-    //     {
-    //       headers: {
-    //         Authorization:
-    //           "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGVmMjQwYTExNGY5YThlMWVmYzNmNDMiLCJpYXQiOjE2OTM4OTY3NDEsImV4cCI6MTY5Mzk4MzE0MX0.Bg0zyQ1ESTNUVmc1gPv3Q-nut_YxETJoMEH1GYqxYKBR7CSAk3QLni_Hwpk8zeFSkA0EczwwrBbvhx9dVDf9owj3XNEU_vKtJ69X-LrcI5YdStQsSroxCv-UR-tg2TVqPCw1Co_AcDFfIUg6_MVUyagopDO1i5V-rS088KEPJur6y8NFMWkGkuZEs-sDIAm3frLd007erso77XcwvuI9J1jTh0pf6c1A5L8eo4FNua82PQjRBta2T7QIPXoXh2bQSQexbL2ewF7LnfcL72_jgae8-N4GYG2qa3iI51sYnMKONYFmf-utT5pS-5ulGdflzXvJI7HOC3QFjZ3-P4Rxrw",
-    //       },
-    //     }
-    //   );
+    try {
+      const response = await axios.post(
+        "https://dev.elevate-apis.shikshalokam.org/karmayogi-bap/dsep/confirm",
+        payload,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGY3MDFlNTNiOGU1NTJkNGM5ZTU2ZDkiLCJpYXQiOjE2OTM5MDk0NzcsImV4cCI6MTY5Mzk5NTg3N30.PKy470m5ZQ6qAJc2fnaVZHYZU6ElM4UnZ8Fva0jiQjJVmK04MaCDT1oa1LIOt97I_RF5W6C2wDjF6qVFXC94pEI_qDdRFgR7odPYS596yMyq7--DJXKPxdCkrfqSquNRFW9cC6t3F2JweZpANNM3NEpOQOra-pyunHbkUQ2PdfKSp893U70QfTYapcBFUWyorPhe_N8czLM-FDONDCXTd2WMeQW7WI9ju7q7GKY5t_x7dWRCfUj_4vJe-5Hq_xRoyEgsXvlxTt9XvcW4GqBqm9t5Glc7_saX9HD7OmJx7O5JkPhTTpv6tPHc8rSM0XhQm6jUbLX6TqfsrE9jV1M6yA",
+          },
+        }
+      );
 
-    //   console.log(response.data);
-    // } catch (error) {
-    //   console.error("Error:", error);
-    // }
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
 
     console.log(payload);
   };
