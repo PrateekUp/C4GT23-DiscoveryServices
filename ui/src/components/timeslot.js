@@ -67,7 +67,7 @@ function Showtimes({ times }) {
           <Button
             key={index}
             variant="contained"
-            color={slot.fulfillment.booked ? "default" : "success"}
+            color={slot.fulfillment.booked ? "secondary" : "success"}
             disabled={slot.fulfillment.booked}
             onClick={() => {
               if (!slot.fulfillment.booked) {
