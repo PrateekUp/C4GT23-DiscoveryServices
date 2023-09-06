@@ -45,11 +45,11 @@ const Detail = () => {
         <h4>{roomDetails.state}</h4>
         <h2 className="text-xl font-bold text-wrap mt-2"> Facilities </h2>
         <hr className="h-px my-2 w-64 mb-4 bg-gray-200 border-0 dark:bg-gray-700" />
-        <div className="flex flex-wrap space-x-2">
+        <div className="flex flex-wrap space-x-1 my-1">
           {roomDetails.facilities.map((facility, index) => (
             <span
               key={index}
-              className="bg-blue-400 text-white px-2 py-1 rounded"
+              className="bg-blue-400 text-white px-2 py-1 my-1 rounded"
             >
               {getFacilityName(facility)}
             </span>
