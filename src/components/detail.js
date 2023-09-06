@@ -1,21 +1,27 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-// import { useState, useEffect } from "react";
 import Showtimes from "./timeslot";
 import Carousel from "./carousel/carousel";
 
+function getFacilityName(facility) {
+  switch (facility) {
+    case "ac":
+      return "Air Conditioner";
+    case "wifi":
+      return "Wifi";
+    case "parking":
+      return "Parking";
+    case "smartclass":
+      return "Smart-Class";
+    default:
+      return "Catering Service";
+  }
+}
 const Detail = () => {
   const location = useLocation();
   const roomDetails = location.state.roomDetails;
   const slots = location.state.slots;
-  // const bpp = location.state.slots;
-
-  // const cardData = fetchDataOrFindDataLocally(id);
-  // //
   const images = [roomDetails.image];
-  // /
-  // "https://example.com/image3.jpg",
-  // ... other image URLs
 
   return (
     <>
@@ -37,6 +43,18 @@ const Detail = () => {
         <h2 className="text-xl font-bold text-wrap mt-2"> Location </h2>
         <hr className="h-px my-2 w-64 mb-4 bg-gray-200 border-0 dark:bg-gray-700" />
         <h4>{roomDetails.state}</h4>
+        <h2 className="text-xl font-bold text-wrap mt-2"> Facilities </h2>
+        <hr className="h-px my-2 w-64 mb-4 bg-gray-200 border-0 dark:bg-gray-700" />
+        <div className="flex flex-wrap space-x-2">
+          {roomDetails.facilities.map((facility, index) => (
+            <span
+              key={index}
+              className="bg-blue-400 text-white px-2 py-1 rounded"
+            >
+              {getFacilityName(facility)}
+            </span>
+          ))}
+        </div>
         <h2 className="text-xl font-bold text-wrap mt-2"> Available Slots </h2>
         <hr className="h-px my-2 w-64 mb-4 bg-gray-200 border-0 dark:bg-gray-700" />
         <Showtimes times={slots} />

@@ -28,15 +28,6 @@ function Filter({
   setCheckedState,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  // const [checkedState, setCheckedState] = useState({
-  //   filter1: false,
-  //   filter2: false,
-  //   filter3: false,
-  //   filter4: false,
-  //   filter5: false,
-  // });
-
-  // const [by, setBy] = useState("");
 
   const handledropdownChange = (event) => {
     setBy(event.target.value);
@@ -75,7 +66,6 @@ function Filter({
                 value={by}
                 label="Location"
                 onChange={handledropdownChange}
-                // style={{ marginRight: "inherit", marginBottom: "auto" }}
               >
                 <MenuItem value={`Odisha`}>Odisha</MenuItem>
                 <MenuItem value={`Gujarat`}>Gujarat</MenuItem>
@@ -246,7 +236,7 @@ const Search = () => {
       },
     };
     console.log(payload);
-
+    toast.info("Searching Rooms... Please wait:)");
     try {
       const response = await axios.post(
         "https://dev.elevate-apis.shikshalokam.org/karmayogi-bap/dsep/search",

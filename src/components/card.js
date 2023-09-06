@@ -7,6 +7,20 @@ import Typography from "@mui/material/Typography";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
+function getFacilityName(facility) {
+  switch (facility) {
+    case "ac":
+      return "Air Conditioner";
+    case "wifi":
+      return "Wifi";
+    case "parking":
+      return "Parking";
+    case "smartclass":
+      return "Smart-Class";
+    default:
+      return "Catering Service";
+  }
+}
 export default function MultiActionAreaCard({ data }) {
   const { bpp, room, slots } = data;
   const navigate = useNavigate();
@@ -26,7 +40,7 @@ export default function MultiActionAreaCard({ data }) {
           alt="green iguana"
         />
         <CardContent>
-          <div className="absolute top-0 right-0 bg-red-500 text-black font-bold text-xs px-4 py-2 rounded-bl-md">
+          <div className="absolute top-0 right-0 bg-red-600 text-black font-bold text-xs px-4 py-2 rounded-bl-md">
             {bpp.id}
           </div>
           <Typography gutterBottom variant="h5" component="div">
@@ -46,6 +60,16 @@ export default function MultiActionAreaCard({ data }) {
           <div className="mt-2">
             <LocationOnIcon style={{ marginRight: "8px" }} />
             {room.state}
+          </div>
+          <div className="flex flex-wrap space-x-1 my-1">
+            {room.facilities.map((facility, index) => (
+              <span
+                key={index}
+                className="bg-black text-white text-sm px-2 py-1 my-1 rounded"
+              >
+                {getFacilityName(facility)}
+              </span>
+            ))}
           </div>
         </CardContent>
       </CardActionArea>
