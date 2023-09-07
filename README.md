@@ -40,3 +40,13 @@ The backend leverages two primary APIs, the search API and the confirm API, to f
 
 - **Runs the app in the development mode.**
   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.The page will reload when you make changes.
+
+## Contribution
+
+We warmly welcome contributions to the C4GT23-DiscoveryServices project. If you're interested in contributing, please follow the guidelines below:
+
+1. **Create an Issue:** Before starting any work, please create an issue in the repository detailing the feature, enhancement, or bug fix you wish to contribute. This helps in discussing the potential changes and avoids any overlapping efforts.
+
+2. **Detailed Pull Request (PR):** Once you've made your changes, submit a detailed PR. Ensure that your PR description clearly describes the changes made, the issue it addresses, and any other relevant information to assist in the review process.
+
+By adhering to these guidelines, we can maintain a smooth and efficient contribution process. Thank you for your interest and efforts!
