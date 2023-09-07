@@ -45,7 +45,7 @@ The backend leverages two primary APIs, the search API and the confirm API, to f
 
 C4GT23-DiscoveryServices, being an MVP, has a streamlined flow to ensure ease of use while demonstrating its core functionalities:
 
-1. **Login/Signup:** The current version doesn't have a comprehensive login/signup flow. Instead, we've implemented a hardcoded method to simulate user account creation and login.
+1. **Login/Signup:** The current version doesn't have a comprehensive login/signup flow (frontend). Instead, we've implemented a hardcoded method to simulate user account creation and login.
 
 2. **Search with Filters:** Users can apply their desired filters to search for available rooms. This search criteria is sent to our backend API as a POST request payload, and in response, a list of matching rooms is returned. You can go to each room by clicking on it.
 
