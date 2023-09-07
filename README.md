@@ -10,7 +10,7 @@ C4GT23-DiscoveryServices is an MVP (Minimum Viable Product) crafted to enhance t
 
 ### Use Case:
 
-Employee training and development often face challenges in venue booking. Organizations frequently opt for external venues, neglecting resources like existing infrastructure layed by training institutes. This project augments the iGOT platform, enabling users to discover and book rooms in training institutes and related assets seamlessly. Users can now reserve venues with the desired amenities, for specific time slots, and in preferred locations, all integrated with the DSEP network.
+Employee training and development often face challenges in venue booking. Organizations frequently opt for external venues, neglecting resources like existing infrastructure layed by training institutes. This project augments the iGOT platform, enabling users to discover and book rooms in training institutes and related assets seamlessly. Users can now reserve venues with the desired amenities, for specific time slots, and in preferred locations, all integrated with the [DSEP](https://github.com/beckn/DSEP-Specification) network.
 
 ## Technical details:
 
