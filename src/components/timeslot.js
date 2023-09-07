@@ -17,6 +17,7 @@ function Showtimes({ times }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [slotsState, setSlotsState] = useState(times);
 
   const handleTimeClick = (slot, itemId, fulfillmentId) => {
     setSelectedTime({
@@ -40,6 +41,9 @@ function Showtimes({ times }) {
       itemId: selectedTime.itemId,
       fulfillmentId: selectedTime.fulfillmentId,
       type: "room",
+      // name: name,
+      // email: email,
+      // phone: phone,
     };
 
     try {
@@ -57,6 +61,22 @@ function Showtimes({ times }) {
       console.log(response.data);
       if (response.data.status === true) {
         toast.success("Booking successful");
+        const updatedSlots = slotsState.map((slot) => {
+          if (
+            slot.item.id === selectedTime.itemId &&
+            slot.fulfillment.id === selectedTime.fulfillmentId
+          ) {
+            return {
+              ...slot,
+              fulfillment: {
+                ...slot.fulfillment,
+                booked: true,
+              },
+            };
+          }
+          return slot;
+        });
+        setSlotsState(updatedSlots);
       } else {
         toast.error("Booking failed");
       }
@@ -71,7 +91,7 @@ function Showtimes({ times }) {
   return (
     <div>
       <div className="flex space-x-4">
-        {times.map((slot, index) => (
+        {slotsState.map((slot, index) => (
           <Button
             key={index}
             variant="contained"
