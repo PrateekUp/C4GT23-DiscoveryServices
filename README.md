@@ -41,6 +41,25 @@ The backend leverages two primary APIs, the search API and the confirm API, to f
 - **Runs the app in the development mode.**
   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.The page will reload when you make changes.
 
+## App Flow
+
+C4GT23-DiscoveryServices, being an MVP, has a streamlined flow to ensure ease of use while demonstrating its core functionalities:
+
+1. **Login/Signup:** The current version doesn't have a comprehensive login/signup flow. Instead, we've implemented a hardcoded method to simulate user account creation and login.
+
+2. **Search with Filters:** Users can apply their desired filters to search for available rooms. This search criteria is sent to our backend API as a POST request payload, and in response, a list of matching rooms is returned. You can go to each room by clicking on it.
+
+3. **Room Booking:**
+   - Rooms available for booking are displayed based on the search criteria.
+   - Timeslots for each room are color-coded:
+     - **Gray & Un-clickable:** Represents timeslots that are already booked.
+     - **Green & Clickable:** Indicates available timeslots that can be booked.
+4. **Booking Confirmation:**
+   - Clicking on an available timeslot opens a dialog box prompting the user to fill in additional information.
+   - After filling out the form and clicking "Book", a confirmation toast will appear if the booking is successful. If there's an issue, an error message will be displayed.
+
+By following this flow, users can effortlessly discover and book rooms as per their requirements.
+
 ## Contribution
 
 We warmly welcome contributions to the C4GT23-DiscoveryServices project. If you're interested in contributing, please follow the guidelines below:
